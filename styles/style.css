@@ -1,0 +1,35 @@
+body{
+    margin: auto;
+    background-color: cadetblue;
+}
+.board{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 2% auto 2%;
+    width: 80%;
+    background-color: cornsilk;
+    border-radius: 10px;
+    padding: 15px;
+
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    min-width: 200px;
+    min-height: 300px ;
+    max-width: 200px;
+    max-height: 300px ;
+    border-radius: 10px;
+    background-color: crimson;
+    
+}
+.figuras{
+    padding: 15px;
+    margin: auto;
+    max-width: 80%;
+    max-height: 50%;
+}
