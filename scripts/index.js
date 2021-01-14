@@ -2,44 +2,55 @@ async function buscarPokemons(){
     await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     .then(retorno => retorno.json())
     .then(todosPokemon => todosPokemon.results.forEach(pokemon => {
-       let pokeURL = pokemon.url;
-       fetch(pokeURL)
-       .then(pokeInfo => pokeInfo.json())
-       //.then(pokeinf => console.log(pokeinf)) //todas as informações 
-       .then(pokeinf => {
-            let pokeImg = pokeinf.sprites.other.dream_world.front_default;
-            let pokeName = pokeinf.name;
-            let pokeId = pokeinf.id;
-            let poketipo1 = pokeinf.types[0].type.name;
-     
-            montaCards(pokeImg, pokeName, pokeId, poketipo1);
-   
-
-        })
+        let pokeURL = pokemon.url;
+        buscarPokeInfos(pokeURL);
     }))
 }
 
-function montaCards(imagem, nome, id, tipo){
-    const board = document.querySelector('.board');
-    let carta = document.createElement('DIV');
-    let img = document.createElement("img");
-    let list = document.createElement("ul");
-    let dados = [id, nome, tipo];
-
-    carta.setAttribute("class", "card");
-    
-    img.setAttribute("src",imagem );
-    img.setAttribute("alt", nome );
-    img.setAttribute("class", "figuras" );
-    
-    dados.forEach(dado =>{
-        let item = document.createElement("li");
-        item.innerText = dado;
-        list.appendChild(item);
-    })
-
-    carta.appendChild(img);
-    carta.appendChild(list);
-    board.appendChild(carta);
-
+async function buscarPokeInfos(url){
+    await fetch(url)
+    .then(pokeInfo => pokeInfo.json())
+    .then(pokeinf => {
+        const cardInfos = pokeinf.species.url
+        buscarCardInfos(cardInfos)
+    }) 
+    //.then(pokeinf => {
+    //    let poketipo1 = pokeinf.types[0].type.name;
+    //    
+    // })
 }
+
+async function buscarCardInfos(url){
+    await fetch(url)
+    .then(retorno => retorno.json())
+    .then(infos => {
+        const id = infos.id;
+        const name = infos.name ;
+        const cor = infos.color.name;
+        const descricao = infos.flavor_text_entries[0].flavor_text;
+        const lendario = infos.is_legendary;
+        const mistico = infos.is_mythical;
+        montaCard(id, name, cor, descricao, lendario, mistico);
+    })
+}
+function montaCard(id, name, cor, descricao, lendario, mistico){
+    const board = document.querySelector('.board');
+    const carta = document.createElement('div');
+    const desc = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    if(lendario){
+        carta.setAttribute("class", "card lendario");
+    }else if(mistico){
+        carta.setAttribute("class", "card mistico");
+    }else{
+        carta.setAttribute("class", "card");
+    }
+    carta.style.borderColor = cor;
+    desc.setAttribute('class','textoDescritivo');
+    imgContainer.setAttribute('class','figuras');
+    desc.innerText = descricao;
+    carta.innerText = `#${id}  Name: ${name}`;
+    carta.appendChild(desc);
+    board.appendChild(carta);
+    
+};

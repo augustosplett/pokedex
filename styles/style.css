@@ -1,7 +1,18 @@
+:root{
+    --color-default:#eeeded;
+    --color-legendary: #ffe05d;
+    --color-mystic: #efa8e4;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 body{
     margin: auto;
     background-color: cadetblue;
 }
+
 .board{
     display: flex;
     justify-content: space-around;
@@ -13,8 +24,8 @@ body{
     background-color: cornsilk;
     border-radius: 10px;
     padding: 15px;
-
 }
+
 .card{
     display: flex;
     flex-direction: column;
@@ -24,12 +35,26 @@ body{
     max-width: 200px;
     max-height: 300px ;
     border-radius: 10px;
-    background-color: crimson;
-    
+    background-color: var(--color-default);
+    border: solid 15px white;
+}
+
+.normal{
+    background-color: var(--color-default);
+}
+.mistico{
+    background-color: var(--color-mystic);
+}
+.lendario{
+    background-color: var(--color-legendary);
 }
 .figuras{
     padding: 15px;
     margin: auto;
     max-width: 80%;
     max-height: 50%;
+}
+.textoDescritivo{
+    font-size: smaller;
+    width: 80%;   
 }
