@@ -48,6 +48,8 @@ function montaCard(id, name, cor, descricao, lendario, mistico, pokeImg, pokeTip
     const imgContainer = document.createElement('div');
     const ulTypes = document.createElement('ul');
 
+    
+
     if(lendario){
         carta.setAttribute("class", "card lendario");
     }else if(mistico){
@@ -56,15 +58,29 @@ function montaCard(id, name, cor, descricao, lendario, mistico, pokeImg, pokeTip
         carta.setAttribute("class", "card");
     }
 
-    carta.setAttribute('id',id)
-    carta.style.background = cor;
+    carta.setAttribute('id',id);
+    if (cor == 'white'){
+        carta.style.background = '#eeeded';
+    }else{
+        carta.style.background = cor;
+    }
+
+    if(cor =='black'){
+        carta.style.color = 'white';
+    }
+
+    carta.style.order = id;
     desc.setAttribute('class','textoDescritivo');
     imagem.setAttribute('src', pokeImg);
     imagem.setAttribute('alt', name);
     imagem.setAttribute('class','figuras')
     imgContainer.setAttribute('class','imgContainer');
     imgContainer.appendChild(imagem);
+    
+    
     desc.innerText = descricao;
+    desc.innerText = desc.innerText.replace("<br>"," ");
+    
     carta.innerText = `#${id}  Name: ${name}`;
     
     pokeTipo.forEach(el =>{
