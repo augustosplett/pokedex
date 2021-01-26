@@ -1,5 +1,5 @@
-async function buscarPokemons(){
-    await fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
+function buscarPokemons(){
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=151`)
     .then(retorno => retorno.json())
     .then(todosPokemon => todosPokemon.results.forEach(pokemon => {
         let pokeURL = pokemon.url;
@@ -7,8 +7,8 @@ async function buscarPokemons(){
     }))
 }
 
-async function buscarPokeInfos(url){
-    await fetch(url)
+function buscarPokeInfos(url){
+    fetch(url)
     .then(pokeInfo => pokeInfo.json())
     .then(pokeinf => {
         const cardInfos = pokeinf.species.url
@@ -19,8 +19,8 @@ async function buscarPokeInfos(url){
     }) 
 }
 
-async function buscarCardInfos(url, pokeImg,pokeTipo){
-    await fetch(url)
+function buscarCardInfos(url, pokeImg,pokeTipo){
+    fetch(url)
     .then(retorno => retorno.json())
     .then(infos =>{
         let descricao ='';
