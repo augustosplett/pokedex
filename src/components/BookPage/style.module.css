@@ -1,0 +1,9 @@
+.page{
+    background-color: #e8e1c5;
+    min-height: 66vh;
+    position: absolute;
+    left: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 3px 3px 3px black;
+}

@@ -1,0 +1,52 @@
+.navBar{
+    width: 90%;
+    height: 30px;
+    margin: 3%;
+    background-color: #2a394c;
+    color: #d9e1e0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.number{
+    color: #d9e1e0;
+    background-color: #24353f;
+    border: 1px #d9e1e0 solid;  
+    border-radius: 5px;
+    margin:10px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+.title{
+    color: #d9e1e0;
+}
+
+.category{
+    color: #d9e1e0;
+    background-color: #384a58;
+    border: 1px #d9e1e0 solid;  
+    border-radius: 10px;
+    margin:10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.type{
+    background-color: black;
+    color: #d9e1e0;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px ;
+    margin-right: 5px ;
+    border-radius: 5px;
+}

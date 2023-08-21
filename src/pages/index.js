@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import BookCover from '@/components/BookCover'
-import Border from '@/components/BookCoverBorder'
+import BookPage from '@/components/BookPage'
+import PageHeader from '@/components/PageHeader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,14 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <BookCover> 
-          <Border style={{bottom:0}}/>
+          <BookPage> 
+            <PageHeader
+              number={10}
+              name="Charizard"
+              category="Fire Pokemon"
+              types={['Flying','Fire']}
+            /> 
+          </BookPage>
         </BookCover>
       </main>
     </>
