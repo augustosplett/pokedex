@@ -4,7 +4,7 @@ import styles from '@/styles/Home.module.css'
 import BookCover from '@/components/BookCover'
 import BookPage from '@/components/BookPage'
 import PageHeader from '@/components/PageHeader'
-
+import Photo from '@/components/Photo'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -24,6 +24,7 @@ export default function Home() {
               category="Fire Pokemon"
               types={['Flying','Fire']}
             /> 
+            <Photo src='/charizard.png' alt='charizard'/>
           </BookPage>
         </BookCover>
       </main>

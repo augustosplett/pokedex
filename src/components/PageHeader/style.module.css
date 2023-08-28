@@ -1,13 +1,15 @@
 .navBar{
     width: 90%;
-    height: 30px;
-    margin: 3%;
+    height: 10%;
+    box-sizing: border-box;
+    margin-top: 5%;
     background-color: #2a394c;
     color: #d9e1e0;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-left: 5%;
     
 }
 

@@ -6,4 +6,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     box-shadow: 3px 3px 3px black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
