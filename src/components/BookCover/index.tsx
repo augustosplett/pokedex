@@ -1,5 +1,5 @@
 import styles from "./style.module.css"
-import Border from '@/components/BookCover/BookCoverBorder'
+import Border from './BookCoverBorder'
 
 export default function BookCover({ children }){
     return(

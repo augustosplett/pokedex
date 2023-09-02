@@ -7,13 +7,18 @@
     justify-content: space-between;
     flex-grow: 1;
 }
+
 .photoHolder{
     position: relative;
     width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .pokeName{
     position: absolute;
-    bottom: 5%;
+    bottom: 30%;
     text-align: center;
     width: 90%;
     
@@ -21,9 +26,13 @@
 
 .mainPhoto{
     position: absolute;
-    width:90%;
-    max-height:90%;
+    height:70%;
     top: 5%;
     border: 15px solid white;
     background-color:#ddd;
+}
+
+.sideInfo{
+    width: 40%;
+    background-color: black;
 }
