@@ -13,7 +13,11 @@ export default function Photo(props: PokeSpecs){
                 <h1 className={styles.pokeName}>Charizard</h1>
             </div>
             <div className={styles.sideInfo}>
-
+               <h1 className={styles.sideTitle}>Details</h1> 
+               <ul className={styles.pokeDetails}>
+                    <li>Weight: {props.pokemon.weight}</li>
+                    <li>Height: {props.pokemon.height}</li>
+               </ul>
             </div>
         </div>
         
