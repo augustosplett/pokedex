@@ -14,7 +14,7 @@ export default function PageHeader(props: PokeSpecs){
             </div>
             <div className={styles.container}>
                 <div className={styles.category}>{props.pokemon.types}</div>
-                {props.pokemon.types.map((el) => <div className={styles.type}> {el} </div>)}
+                {props.pokemon.types.map((el, index) => <div className={styles.type} key={index}> {el} </div>)}
             </div>
         </nav>
     )

@@ -2,7 +2,8 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import styles from '../styles/Home.module.css'
 const inter = Inter({ subsets: ['latin'] })
-import Pokemons from './pokemons.tsx'
+import Pokemons from './pokemons'
+
 export default function Home() {
   return (
     <>
